@@ -154,24 +154,24 @@ var endGame = function() {
 var shop = function() {
     // provide player with shop options
     var shopOptionPrompt = window.prompt(
-        "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice."
+        "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Enter 1 for REFILL, 2 for UPGRADE, or 3 to LEAVE."
         );
+
+    // convert prompt responses from string to integers
+    shopOptionPrompt = parseInt(shopOptionPrompt);
     
     // actions player can execute
     switch(shopOptionPrompt) {
     // replenish health
-    case "refill":
-    case "REFILL":
+    case 1:
         playerInfo.refillHealth();
         break;
     // upgrade robot
-    case "upgrade":
-    case "UPGRADE":
+    case 2:
         playerInfo.upgradeAttack();
         break;
     // leave shop
-    case "leave":
-    case "LEAVE":
+    case 3:
         window.alert("Leaving the store.");
         break;
     // else
